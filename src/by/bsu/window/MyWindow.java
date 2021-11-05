@@ -97,7 +97,7 @@ public class MyWindow extends JFrame {
         });
     }
 
-    public static class CustomListener implements FocusListener {
+    public class CustomListener implements FocusListener {
 
         @Override
         public void focusGained(FocusEvent e) {
@@ -106,7 +106,9 @@ public class MyWindow extends JFrame {
 
         @Override
         public void focusLost(FocusEvent e) {
-
+            progression.setFirstElement(Double.parseDouble(editFirstElement.getText()));
+            progression.setDenominator(Double.parseDouble(editDenominator.getText()));
+            labelProgression.setText(progression.toString());
         }
     }
 
